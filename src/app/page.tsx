@@ -1,4 +1,5 @@
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="container mx-auto px-4">
         <Hero />
         <About />
+        <Skills />
         <Research />
         <Projects />
         <Blog />
