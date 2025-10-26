@@ -22,7 +22,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="sticky top-0 bg-primary text-neutral-2 p-4 flex justify-between items-center z-10">
+    <nav aria-label="Main navigation" className="sticky top-0 bg-primary text-neutral-2 p-4 flex justify-between items-center z-10">
       <div className="text-2xl font-bold">
         <Link to="hero" smooth={true} duration={500} className="cursor-pointer">IK</Link>
       </div>
@@ -36,7 +36,7 @@ const Navigation = () => {
         ))}
         <li>
           {mounted && (
-            <button onClick={toggleTheme} className="focus:outline-none">
+            <button onClick={toggleTheme} className="focus:outline-none" aria-label="Toggle theme">
               {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
             </button>
           )}
@@ -44,11 +44,11 @@ const Navigation = () => {
       </ul>
       <div className="md:hidden flex items-center">
         {mounted && (
-          <button onClick={toggleTheme} className="focus:outline-none mr-4">
+          <button onClick={toggleTheme} className="focus:outline-none mr-4" aria-label="Toggle theme">
             {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
           </button>
         )}
-        <button onClick={() => setIsOpen(!isOpen)}>
+        <button onClick={() => setIsOpen(!isOpen)} aria-label="Open menu">
           {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>

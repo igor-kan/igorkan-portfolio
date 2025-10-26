@@ -4,7 +4,9 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-scroll';
 
-import HeroVisual from './HeroVisual';
+import dynamic from 'next/dynamic';
+
+const HeroVisual = dynamic(() => import('./HeroVisual'), { ssr: false });
 
 const Hero = () => {
   return (
