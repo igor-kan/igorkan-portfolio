@@ -4,6 +4,8 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from 'react-scroll';
 
+import HeroVisual from './HeroVisual';
+
 const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center bg-background">
@@ -28,21 +30,19 @@ const Hero = () => {
             I build beautiful and functional web applications, and I love to solve complex problems.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
-            <Link to="research" smooth={true} duration={500} className="bg-secondary text-primary rounded-full py-3 px-6 hover:bg-accent cursor-pointer">
+            <Link to="research" smooth={true} duration={500} className="bg-secondary text-primary rounded-full py-3 px-6 hover:bg-accent cursor-pointer transition-transform hover:scale-105">
               View Research
             </Link>
-            <a href="/resume.pdf" download className="bg-accent text-primary rounded-full py-3 px-6 hover:bg-secondary">
+            <a href="/resume.pdf" download className="bg-accent text-primary rounded-full py-3 px-6 hover:bg-secondary transition-transform hover:scale-105">
               Download Resume
             </a>
-            <Link to="contact" smooth={true} duration={500} className="bg-primary text-secondary border border-secondary rounded-full py-3 px-6 hover:bg-secondary hover:text-primary cursor-pointer">
+            <Link to="contact" smooth={true} duration={500} className="bg-primary text-secondary border border-secondary rounded-full py-3 px-6 hover:bg-secondary hover:text-primary cursor-pointer transition-transform hover:scale-105">
               Let's Connect
             </Link>
           </div>
         </div>
-        <div className="md:w-2/5 mt-8 md:mt-0">
-          <div className="w-full h-96 bg-neutral-3 dark:bg-neutral-1 rounded-lg flex items-center justify-center">
-            <p className="text-foreground">Interactive visual coming soon...</p>
-          </div>
+        <div className="md:w-2/5 mt-8 md:mt-0 h-96">
+          <HeroVisual />
         </div>
       </div>
     </section>

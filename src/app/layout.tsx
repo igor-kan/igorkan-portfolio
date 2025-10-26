@@ -1,8 +1,13 @@
+'use client';
+
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PageLoader from "@/components/PageLoader";
+import { AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -14,29 +19,35 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-mono",
 });
 
-export const metadata = {
-  title: "Igor Kan - Software Engineer",
-  description: "Personal portfolio of Igor Kan, a software engineer specializing in building beautiful and functional web applications.",
-  keywords: ["Igor Kan", "software engineer", "portfolio", "web developer", "Next.js", "React", "TypeScript"],
-  authors: [{ name: "Igor Kan" }],
-  creator: "Igor Kan",
-  publisher: "Igor Kan",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+  }, []);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <Providers>
-          <Navigation />
-          {children}
-          <Footer />
+          <AnimatePresence mode="wait">
+            {isLoading && <PageLoader />}
+          </AnimatePresence>
+          {!isLoading && (
+            <>
+              <Navigation />
+              {children}
+              <Footer />
+            </>
+          )}
         </Providers>
       </body>
     </html>
