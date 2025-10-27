@@ -1,11 +1,9 @@
 'use client';
 
-import { useKonami } from 'use-konami';
+import useKonami from 'use-konami';
 
 const Konami = () => {
-  useKonami(() => {
-    alert('Konami code activated!');
-  });
+  useKonami({ onUnlock: () => alert('Konami code activated!') });
 
   return null;
 };

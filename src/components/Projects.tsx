@@ -6,7 +6,20 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaStar } from 'react-icons/fa';
 
-const projectsData = [
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  thumbnail: string;
+  category: string;
+  techStack: string[];
+  githubStars: number;
+  liveUrl: string | null;
+  sourceUrl: string;
+  featured: boolean;
+}
+
+const projectsData: Project[] = [
   {
     id: 1,
     title: 'Project Alpha',
@@ -31,10 +44,82 @@ const projectsData = [
     sourceUrl: '#',
     featured: false,
   },
+  {
+    id: 3,
+    title: 'Project Gamma',
+    description: 'A data science project for sentiment analysis.',
+    thumbnail: 'https://picsum.photos/seed/gamma/600/400',
+    category: 'Data Science',
+    techStack: ['Python', 'NLTK', 'Scikit-learn'],
+    githubStars: 789,
+    liveUrl: '#',
+    sourceUrl: '#',
+    featured: true,
+  },
+  {
+    id: 4,
+    title: 'Project Delta',
+    description: 'An open-source library for React.',
+    thumbnail: 'https://picsum.photos/seed/delta/400/600',
+    category: 'Open Source',
+    techStack: ['React', 'TypeScript', 'Rollup'],
+    githubStars: 101,
+    liveUrl: '#',
+    sourceUrl: '#',
+    featured: false,
+  },
+  {
+    id: 5,
+    title: 'Project Epsilon',
+    description: 'A web app for project management.',
+    thumbnail: 'https://picsum.photos/seed/epsilon/600/400',
+    category: 'Web Dev',
+    techStack: ['React', 'Node.js', 'MongoDB'],
+    githubStars: 234,
+    liveUrl: '#',
+    sourceUrl: '#',
+    featured: true,
+  },
+  {
+    id: 6,
+    title: 'Project Zeta',
+    description: 'A mobile app for fitness tracking.',
+    thumbnail: 'https://picsum.photos/seed/zeta/400/600',
+    category: 'Web Dev',
+    techStack: ['React Native', 'Firebase'],
+    githubStars: 567,
+    liveUrl: null,
+    sourceUrl: '#',
+    featured: false,
+  },
+  {
+    id: 7,
+    title: 'Project Eta',
+    description: 'A machine learning model for fraud detection.',
+    thumbnail: 'https://picsum.photos/seed/eta/600/400',
+    category: 'AI/ML',
+    techStack: ['Python', 'Scikit-learn', 'XGBoost'],
+    githubStars: 890,
+    liveUrl: '#',
+    sourceUrl: '#',
+    featured: true,
+  },
+  {
+    id: 8,
+    title: 'Project Theta',
+    description: 'A data visualization dashboard for sales data.',
+    thumbnail: 'https://picsum.photos/seed/theta/400/600',
+    category: 'Data Science',
+    techStack: ['Tableau', 'SQL'],
+    githubStars: 12,
+    liveUrl: '#',
+    sourceUrl: '#',
+    featured: false,
+  },
   // Add more projects here
 ];
 
-const ProjectCard = ({ project }) => (
+const ProjectCard = ({ project }: { project: Project }) => (
   <motion.div layout className="relative group overflow-hidden rounded-lg">
     <Image src={project.thumbnail} alt={project.title} width={600} height={600} className="w-full h-full object-cover" />
     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center p-4">
@@ -56,8 +141,14 @@ const ProjectCard = ({ project }) => (
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
+  const [visibleProjects, setVisibleProjects] = useState(6);
   const filters = ['All', 'Web Dev', 'AI/ML', 'Data Science', 'Open Source'];
   const filteredProjects = projectsData.filter(p => filter === 'All' || p.category === filter);
+  const projectsToShow = filteredProjects.slice(0, visibleProjects);
+
+  const loadMore = () => {
+    setVisibleProjects(prev => prev + 3);
+  };
 
   return (
     <section id="projects" className="py-20 bg-background">
@@ -72,9 +163,16 @@ const Projects = () => {
         </div>
         <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
           <Masonry gutter="2rem">
-            {filteredProjects.map(project => <ProjectCard key={project.id} project={project} />)}
+            {projectsToShow.map(project => <ProjectCard key={project.id} project={project} />)}
           </Masonry>
         </ResponsiveMasonry>
+        {visibleProjects < filteredProjects.length && (
+          <div className="text-center mt-8">
+            <button onClick={loadMore} className="bg-secondary text-primary rounded-full py-3 px-6 hover:bg-accent cursor-pointer transition-transform hover:scale-105">
+              Load More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

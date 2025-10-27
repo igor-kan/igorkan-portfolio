@@ -3,22 +3,30 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import copy from 'copy-to-clipboard';
-import { FaLinkedin, FaGithub, FaGoogle, FaSubstack, FaDev, FaTwitter, FaCopy } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaGoogle, FaDev, FaTwitter, FaCopy } from 'react-icons/fa';
+import { BsSubstack } from 'react-icons/bs';
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 const socialLinks = [
   { name: 'LinkedIn', icon: <FaLinkedin />, url: '#' },
   { name: 'GitHub', icon: <FaGithub />, url: '#' },
   { name: 'Google Scholar', icon: <FaGoogle />, url: '#' },
-  { name: 'Substack', icon: <FaSubstack />, url: '#' },
+  { name: 'Substack', icon: <BsSubstack />, url: '#' },
   { name: 'Dev.to', icon: <FaDev />, url: '#' },
   { name: 'Twitter/X', icon: <FaTwitter />, url: '#' },
 ];
 
 const Contact = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
   const [isCopied, setIsCopied] = useState(false);
 
-  const onSubmit = data => {
+  const onSubmit = (data: FormData) => {
     // Replace with your Formspree endpoint
     fetch('https://formspree.io/f/your_form_id', {
       method: 'POST',
@@ -27,7 +35,7 @@ const Contact = () => {
     });
   };
 
-  const handleCopy = (text) => {
+  const handleCopy = (text: string) => {
     copy(text);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000);

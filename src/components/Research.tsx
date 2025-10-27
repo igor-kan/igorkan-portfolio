@@ -3,7 +3,23 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const researchData = [
+interface ResearchProject {
+  id: number;
+  title: string;
+  authors: string[];
+  institution: string;
+  date: string;
+  abstract: string;
+  keyFindings: string[];
+  visual: string;
+  tags: string[];
+  status: string;
+  featured: boolean;
+  paperUrl: string;
+  codeUrl: string;
+}
+
+const researchData: ResearchProject[] = [
   {
     id: 1,
     title: 'Quantum Error Correction Codes',
@@ -37,7 +53,7 @@ const researchData = [
   // Add more research projects here
 ];
 
-const ResearchCard = ({ project, isExpanded, onToggle }) => (
+const ResearchCard = ({ project, isExpanded, onToggle }: { project: ResearchProject, isExpanded: boolean, onToggle: () => void }) => (
   <motion.div
     layout
     className={`bg-neutral-3 dark:bg-neutral-1 p-6 rounded-lg shadow-lg ${project.featured ? 'md:col-span-2' : ''}`}>
@@ -76,7 +92,7 @@ const ResearchCard = ({ project, isExpanded, onToggle }) => (
 
 const Research = () => {
   const [filter, setFilter] = useState('All');
-  const [expandedId, setExpandedId] = useState(null);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   const filters = ['All', 'Physics', 'Math', 'CS', 'Data Science'];
   const filteredData = researchData.filter(p => filter === 'All' || p.tags.includes(filter));

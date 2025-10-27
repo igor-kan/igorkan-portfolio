@@ -38,7 +38,7 @@ const ParticleSystem = () => {
       for (let i = 0; i < positions.length; i += 3) {
         const x = initialPositions[i];
         const y = initialPositions[i + 1];
-        const z = initialPositions[i + 2];
+        
 
         const dx = x - mouse.x * 5;
         const dy = y - mouse.y * 5;

@@ -1,9 +1,22 @@
 'use client';
 
 import React from 'react';
-import { FaSubstack, FaDev, FaMedium } from 'react-icons/fa';
+import { BsSubstack } from 'react-icons/bs';
+import { FaDev, FaMedium } from 'react-icons/fa';
 
-const blogData = [
+type Platform = 'Substack' | 'Dev.to' | 'Medium';
+
+interface Post {
+  id: number;
+  title: string;
+  platform: Platform;
+  date: string;
+  excerpt: string;
+  tags: string[];
+  url: string;
+}
+
+const blogData: Post[] = [
   {
     id: 1,
     title: 'Understanding Quantum Entanglement',
@@ -34,13 +47,13 @@ const blogData = [
   // Add more blog posts here
 ];
 
-const platformIcons = {
-  Substack: <FaSubstack />,
+const platformIcons: Record<Platform, React.ReactElement> = {
+  Substack: <BsSubstack />,
   'Dev.to': <FaDev />,
   Medium: <FaMedium />,
 };
 
-const BlogCard = ({ post }) => (
+const BlogCard = ({ post }: { post: Post }) => (
   <a href={post.url} target="_blank" rel="noopener noreferrer" className="block bg-neutral-3 dark:bg-neutral-1 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
     <div className="flex justify-between items-start">
       <h3 className="text-2xl font-bold text-foreground mb-2">{post.title}</h3>

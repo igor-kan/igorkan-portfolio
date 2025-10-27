@@ -39,7 +39,7 @@ const Hero = () => {
               Download Resume
             </a>
             <Link to="contact" smooth={true} duration={500} className="bg-primary text-secondary border border-secondary rounded-full py-3 px-6 hover:bg-secondary hover:text-primary cursor-pointer transition-transform hover:scale-105">
-              Let's Connect
+              Let&apos;s Connect
             </Link>
           </div>
         </div>

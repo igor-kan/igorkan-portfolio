@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiMenu, FiX, FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 import { Link } from 'react-scroll';
@@ -8,12 +8,7 @@ import { Link } from 'react-scroll';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  
 
   const menuItems = ['About', 'Research', 'Projects', 'Blog', 'Resume', 'Contact'];
 
@@ -35,7 +30,7 @@ const Navigation = () => {
           </li>
         ))}
         <li>
-          {mounted && (
+          {typeof window !== 'undefined' && (
             <button onClick={toggleTheme} className="focus:outline-none" aria-label="Toggle theme">
               {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
             </button>
@@ -43,7 +38,7 @@ const Navigation = () => {
         </li>
       </ul>
       <div className="md:hidden flex items-center">
-        {mounted && (
+        {typeof window !== 'undefined' && (
           <button onClick={toggleTheme} className="focus:outline-none mr-4" aria-label="Toggle theme">
             {theme === 'dark' ? <FiSun size={24} /> : <FiMoon size={24} />}
           </button>
