@@ -6,10 +6,10 @@ import { FaGraduationCap, FaFlask, FaMapMarkerAlt, FaCode } from 'react-icons/fa
 
 const About = () => {
   const quickFacts = [
-    { icon: <FaGraduationCap />, text: 'PhD in Physics' },
-    { icon: <FaFlask />, text: 'Quantum Computing Research' },
-    { icon: <FaMapMarkerAlt />, text: 'New York, NY' },
-    { icon: <FaCode />, text: 'Full-Stack Developer' },
+    { icon: <FaGraduationCap />, text: 'HBSc Physics & Math — UofT' },
+    { icon: <FaFlask />, text: 'Statistics Minor · sGPA 3.7' },
+    { icon: <FaMapMarkerAlt />, text: 'Toronto, ON, Canada' },
+    { icon: <FaCode />, text: 'Full-Stack Developer · 180+ Projects' },
   ];
 
   return (
@@ -20,8 +20,8 @@ const About = () => {
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-secondary to-accent rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <Image
-              src="https://picsum.photos/seed/igorkan/800/800"
-              alt="Igor Kan"
+              src="https://picsum.photos/seed/igor-zakhidov-portrait/800/800"
+              alt="Igor Zakhidov"
               width={800}
               height={800}
               className="rounded-lg relative transform group-hover:scale-105 transition-transform duration-500"
@@ -29,13 +29,13 @@ const About = () => {
           </div>
           <div>
             <p className="text-lg text-neutral-1 mb-4">
-              I am a passionate and driven PhD candidate in Physics, currently exploring the fascinating world of quantum computing. My research focuses on developing novel algorithms and protocols to harness the power of quantum mechanics for solving complex computational problems that are intractable for classical computers.
+              I&apos;m an undergraduate student at the University of Toronto majoring in Physics, Mathematics, and Biochemistry with a Minor in Statistics. My academic work spans advanced mathematical analysis, stochastic processes, quantum mechanics, and computational physics.
             </p>
             <p className="text-lg text-neutral-1 mb-4">
-              My journey into the world of technology began with a deep curiosity for how things work, which led me to pursue a degree in physics. During my academic career, I discovered a passion for programming and software development, which I have been honing ever since. I am now a self-taught full-stack developer with a mission to bridge the gap between scientific research and real-world applications.
+              Alongside my studies I build full-stack web apps and AI tools. I&apos;m proficient in Python, JavaScript/TypeScript, React, Next.js, and data analysis with R and Pandas. I&apos;ve shipped over 180 projects — from AI-powered productivity tools and education platforms to finance apps and developer utilities.
             </p>
             <p className="text-lg text-neutral-1 mb-8">
-              I believe that the combination of a strong scientific background and technical expertise is a powerful tool for innovation. I am excited to leverage my skills to build cutting-edge solutions that can make a positive impact on the world.
+              I&apos;m driven by the belief that a strong scientific foundation combined with software engineering creates uniquely powerful solutions. I&apos;m open to research roles, developer positions, and collaborative projects at the intersection of math, science, and technology.
             </p>
             <div className="grid grid-cols-2 gap-4">
               {quickFacts.map((fact, index) => (

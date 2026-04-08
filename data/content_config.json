@@ -1,0 +1,12 @@
+{
+  "portfolio_sections": [
+    { "name": "Hero", "content": "Tagline, Intro, Call to Action." },
+    { "name": "Projects", "fields": ["Title", "Thumbnail", "Tech Stack", "Link"] },
+    { "name": "Skills", "content": "Icons and proficiency bars." },
+    { "name": "Contact", "fields": ["Email", "Social Links", "Form"] },
+    { "name": "Testimonials", "fields": ["Name", "Role", "Company", "Quote", "Avatar"] },
+    { "name": "Blog Feed", "fields": ["Recent Posts", "Newsletter Signup"] }
+  ],
+  "color_themes": ["System Default", "Dark High Contrast", "Glassmorphism", "Nature Green", "Cyberpunk Neon", "Minimalist Mono", "Solarized"],
+  "seo_metadata": ["Title", "Description", "Keywords", "Canonical URL", "Open Graph Image", "Twitter Card Type"]
+}

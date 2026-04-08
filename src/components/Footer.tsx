@@ -10,9 +10,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <FaGithub />, url: 'https://github.com/igorkan' },
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/igorkan' },
-    { icon: <FaTwitter />, url: 'https://twitter.com/igorkan' },
+    { icon: <FaGithub />, url: 'https://github.com/igor-kan' },
+    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/igor-zakhidov/' },
+    { icon: <FaTwitter />, url: 'https://twitter.com/igor_zakhidov' },
   ];
 
   const quickLinks = ['About', 'Projects', 'Contact'];
@@ -21,8 +21,8 @@ const Footer = () => {
     <footer className="bg-primary text-neutral-2 p-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-lg font-bold mb-4">Igor Kan</h3>
-          <p>&copy; 2025 Igor Kan. All rights reserved.</p>
+          <h3 className="text-lg font-bold mb-4">Igor Zakhidov</h3>
+          <p>&copy; 2025 Igor Zakhidov. All rights reserved.</p>
         </div>
         <div>
           <h3 className="text-lg font-bold mb-4">Quick Links</h3>

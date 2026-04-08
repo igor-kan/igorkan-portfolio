@@ -19,7 +19,7 @@ const Navigation = () => {
   return (
     <nav aria-label="Main navigation" className="sticky top-0 bg-primary text-neutral-2 p-4 flex justify-between items-center z-10">
       <div className="text-2xl font-bold">
-        <Link to="hero" smooth={true} duration={500} className="cursor-pointer">IK</Link>
+        <Link to="hero" smooth={true} duration={500} className="cursor-pointer">IZ</Link>
       </div>
       <ul className="hidden md:flex items-center space-x-6">
         {menuItems.map((item) => (

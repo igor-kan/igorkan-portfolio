@@ -13,14 +13,16 @@ const Hero = () => {
     <section id="hero" className="min-h-screen flex items-center bg-background">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-3/5 text-center md:text-left">
-          <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-4">Igor Kan</h1>
+          <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-4">Igor Zakhidov</h1>
           <TypeAnimation
             sequence={[
-              'Physics Researcher',
+              'Physics & Math @ UofT',
               1000,
               'Full-Stack Developer',
               1000,
               'Data Scientist',
+              1000,
+              'AI Builder',
               1000,
             ]}
             wrapper="h2"
@@ -29,7 +31,7 @@ const Hero = () => {
             repeat={Infinity}
           />
           <p className="text-lg text-neutral-1 mb-8 max-w-xl mx-auto md:mx-0">
-            I build beautiful and functional web applications, and I love to solve complex problems.
+            UofT student in Physics, Mathematics & Biochemistry. I build web apps, AI tools, and data pipelines — 180+ projects shipped.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
             <Link to="research" smooth={true} duration={500} className="bg-secondary text-primary rounded-full py-3 px-6 hover:bg-accent cursor-pointer transition-transform hover:scale-105">

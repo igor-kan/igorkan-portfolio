@@ -14,27 +14,27 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: 'Igor Kan - Software Engineer',
-  description: 'Personal portfolio of Igor Kan, a software engineer specializing in building beautiful and functional web applications.',
-  keywords: ['Igor Kan', 'software engineer', 'portfolio', 'web developer', 'Next.js', 'React', 'TypeScript'],
-  authors: [{ name: 'Igor Kan' }],
-  creator: 'Igor Kan',
-  publisher: 'Igor Kan',
+  title: 'Igor Zakhidov - Software Engineer & Physics Student',
+  description: 'Personal portfolio of Igor Zakhidov, a UofT student in Physics, Mathematics & Biochemistry building web apps, AI tools, and data pipelines.',
+  keywords: ['Igor Zakhidov', 'software engineer', 'portfolio', 'web developer', 'Next.js', 'React', 'TypeScript', 'UofT', 'physics'],
+  authors: [{ name: 'Igor Zakhidov' }],
+  creator: 'Igor Zakhidov',
+  publisher: 'Igor Zakhidov',
 };
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Igor Kan',
-  url: 'https://igorkan.com', // Replace with your domain
+  name: 'Igor Zakhidov',
+  url: 'https://igorkan.com',
   sameAs: [
-    'https://github.com/igorkan', // Replace with your github
-    'https://linkedin.com/in/igorkan', // Replace with your linkedin
+    'https://github.com/igor-kan',
+    'https://www.linkedin.com/in/igor-zakhidov/',
   ],
-  jobTitle: 'Software Engineer and Physics Researcher',
+  jobTitle: 'Software Engineer and Physics & Math Student at UofT',
   worksFor: {
     '@type': 'Organization',
-    name: 'University of Physics',
+    name: 'University of Toronto',
   },
 };
 

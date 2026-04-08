@@ -14,12 +14,12 @@ interface FormData {
 }
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: <FaLinkedin />, url: '#' },
-  { name: 'GitHub', icon: <FaGithub />, url: '#' },
-  { name: 'Google Scholar', icon: <FaGoogle />, url: '#' },
-  { name: 'Substack', icon: <BsSubstack />, url: '#' },
-  { name: 'Dev.to', icon: <FaDev />, url: '#' },
-  { name: 'Twitter/X', icon: <FaTwitter />, url: '#' },
+  { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/igor-zakhidov/' },
+  { name: 'GitHub', icon: <FaGithub />, url: 'https://github.com/igor-kan' },
+  { name: 'Google Scholar', icon: <FaGoogle />, url: 'https://scholar.google.com/citations?user=igor-zakhidov' },
+  { name: 'Substack', icon: <BsSubstack />, url: 'https://substack.com/@igorkan' },
+  { name: 'Dev.to', icon: <FaDev />, url: 'https://dev.to/igorkan' },
+  { name: 'Twitter/X', icon: <FaTwitter />, url: 'https://x.com/igorkan' },
 ];
 
 const Contact = () => {
@@ -27,12 +27,7 @@ const Contact = () => {
   const [isCopied, setIsCopied] = useState(false);
 
   const onSubmit = (data: FormData) => {
-    // Replace with your Formspree endpoint
-    fetch('https://formspree.io/f/your_form_id', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
+    window.location.href = `mailto:igor.zakhidov@mail.utoronto.ca?subject=${encodeURIComponent(data.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`From: ${data.name} (${data.email})\n\n${data.message}`)}`;
   };
 
   const handleCopy = (text: string) => {
@@ -62,8 +57,8 @@ const Contact = () => {
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-4">Direct Contact</h3>
             <div className="flex items-center space-x-4 mb-4">
-              <p className="text-lg">igor.kan@example.com</p>
-              <button onClick={() => handleCopy('igor.kan@example.com')} className="text-secondary"><FaCopy /></button>
+              <p className="text-lg">igor.zakhidov@mail.utoronto.ca</p>
+              <button onClick={() => handleCopy('igor.zakhidov@mail.utoronto.ca')} className="text-secondary"><FaCopy /></button>
               {isCopied && <span className="text-green-500">Copied!</span>}
             </div>
             <div className="flex items-center space-x-2 mb-8">

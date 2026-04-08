@@ -23,7 +23,7 @@ const researchData: ResearchProject[] = [
   {
     id: 1,
     title: 'Quantum Error Correction Codes',
-    authors: ['Igor Kan', 'John Doe'],
+    authors: ['Igor Zakhidov', 'John Doe'],
     institution: 'University of Physics',
     date: '2023-10-25',
     abstract: 'This paper introduces a new set of quantum error correction codes that are more resilient to noise...',
@@ -38,7 +38,7 @@ const researchData: ResearchProject[] = [
   {
     id: 2,
     title: 'Machine Learning for Materials Science',
-    authors: ['Igor Kan', 'Jane Smith'],
+    authors: ['Igor Zakhidov', 'Jane Smith'],
     institution: 'Institute of Technology',
     date: '2022-05-15',
     abstract: 'We use machine learning to predict the properties of new materials, accelerating the discovery process...',
