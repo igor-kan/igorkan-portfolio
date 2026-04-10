@@ -18,6 +18,8 @@ interface Project {
 }
 
 const projectsData: Project[] = [
+  { id: 101, title: 'AI Text Summarizer', description: 'A versatile tool for distilling long-form text into concise, actionable formats.', category: 'AI/ML', techStack: ['Next.js', 'AI', 'React'], liveUrl: 'https://ai-text-summarizer.vercel.app', sourceUrl: 'https://github.com/igor-kan/ai-text-summarizer', featured: true, gradient: 'from-indigo-500 to-purple-800' },
+  { id: 102, title: 'HTML Email Signature Generator', description: 'Easily create and customize professional HTML email signatures.', category: 'Tools', techStack: ['HTML', 'CSS', 'JavaScript'], liveUrl: 'https://html-email-signature-generator.vercel.app', sourceUrl: 'https://github.com/igor-kan/html-email-signature-generator', featured: true, gradient: 'from-teal-500 to-emerald-800' },
   // === FEATURED ===
   { id: 1, title: 'Citizenship Canada Test', description: 'Interactive study guide and mock exam platform for the Canadian Citizenship test with full question bank.', category: 'Education', techStack: ['Next.js', 'TypeScript', 'Tailwind'], liveUrl: 'https://citizenship-canada-test.vercel.app', sourceUrl: 'https://github.com/igor-kan/citizenship-canada-test', featured: true, gradient: 'from-red-600 to-red-900' },
   { id: 2, title: 'MathQuest', description: 'Gamified math learning platform with interactive challenges and progress tracking.', category: 'Education', techStack: ['Next.js', 'TypeScript', 'Tailwind'], liveUrl: 'https://mathquest-zeta.vercel.app', sourceUrl: 'https://github.com/igor-kan/mathquest', featured: true, gradient: 'from-blue-600 to-purple-800' },
